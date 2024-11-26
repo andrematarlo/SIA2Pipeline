@@ -6,37 +6,58 @@
     <title>Admin Dashboard</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f4f6;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .dashboard-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            text-align: center;
-        }
-        .dashboard-container h1 {
-            font-size: 24px;
             color: #333;
         }
+        .dashboard-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .dashboard-container h1 {
+            margin: 0 0 20px;
+            font-size: 2rem;
+            color: #444;
+        }
         .dashboard-container p {
-            font-size: 18px;
-            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ffffff;
+            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #ff7eb3, #ff758c);
         }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
         <h1>Welcome, Admin!</h1>
-        <p>You have successfully logged in as an admin.</p>
+        <p>Manage users, oversee system configurations, and keep everything running smoothly from your dashboard.</p>
+        <a href="#" class="btn">Go to Admin Panel</a>
     </div>
 </body>
 </html>
