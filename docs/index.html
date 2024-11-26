@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script>
+        // Static user data for demo purposes
+        const users = {
+            "andrematarlo": { password: "Matarlo13", role: "user" },
+            "adminuser": { password: "AdminPass123", role: "admin" }
+        };
+
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Retrieve form data
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const role = document.getElementById("role").value;
+
+            // Validate credentials
+            if (users[username] && users[username].password === password && users[username].role === role) {
+                if (role === "user") {
+                    window.location.href = "user_dashboard.html"; // Redirect to user landing page
+                } else if (role === "admin") {
+                    window.location.href = "admin_dashboard.html"; // Redirect to admin landing page
+                }
+            } else {
+                alert("Invalid username, password, or role. Please try again.");
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>Login</h1>
-    <form action="process_login.php" method="POST">
+    <form onsubmit="validateLogin(event)">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
 
