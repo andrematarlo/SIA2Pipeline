@@ -95,10 +95,22 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Example user credentials (use a real authentication system in practice)
-            if (username === 'andrematarlo' && password === 'Matarlo13') {
-                alert('Login successful! Redirecting to your dashboard...');
+            // Example credentials (you can extend this logic to include more users and admins)
+            const userCredentials = {
+                'andrematarlo': 'Matarlo13',
+            };
+
+            const adminCredentials = {
+                'adminuser': 'Admin123', // Example admin account
+            };
+
+            // Check if the username and password match user or admin credentials
+            if (userCredentials[username] && userCredentials[username] === password) {
+                alert('Login successful! Redirecting to your user dashboard...');
                 window.location.href = 'user_dashboard.html'; // Redirect to user dashboard
+            } else if (adminCredentials[username] && adminCredentials[username] === password) {
+                alert('Login successful! Redirecting to admin dashboard...');
+                window.location.href = 'admin_dashboard.html'; // Redirect to admin dashboard
             } else {
                 alert('Invalid credentials. Please try again.');
             }
