@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Or 'master' if that's your default branch
+      - main
 
 jobs:
   deploy:
@@ -15,23 +15,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Step 2: Set up PHP (Optional: If PHP scripts are used during static site generation)
+    # Step 2: Set up PHP
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.1'  # Specify the PHP version
+        php-version: '8.1'
 
-    # Step 3: Install dependencies (if your project uses a package manager like Composer)
+    # Step 3: Install dependencies in the correct directory
     - name: Install dependencies
-      run: composer install
+      run: composer install --working-dir=./SIA
 
-    # Step 4: Generate static files (if your PHP app needs a build step)
+    # Step 4: Generate static files (if required)
     - name: Generate static files
-      run: php build-script.php  # Replace with the script or commands to generate static HTML files
+      run: php ./SIA/build-script.php  # Update the path to your build script
 
-    # Step 5: Deploy the static website to GitHub Pages
+    # Step 5: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.MY_TOKEN }}
-        publish_dir: ./output  # Specify the directory where your static files are located after the build
+        publish_dir: ./SIA/output  # Adjust this path to where your generated files are
