@@ -29,7 +29,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then((userCredential) => {
       // Login successful, redirect to the user dashboard
       alert('Login successful!');
-      window.location.href = 'userdashboard.html';  // Redirect to user dashboard
+      window.location.href = 'index.html';  // Redirect to user dashboard
     })
     .catch((error) => {
       const errorCode = error.code;
