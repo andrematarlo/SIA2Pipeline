@@ -11,13 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the code from your repository
+    # Step 1: Checkout the code from your repository
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Deploy the website to GitHub Pages
+    # Step 2: Set up PHP (Optional: If PHP scripts are used during static site generation)
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'  # Specify the PHP version
+
+    # Step 3: Install dependencies (if your project uses a package manager like Composer)
+    - name: Install dependencies
+      run: composer install
+
+    # Step 4: Generate static files (if your PHP app needs a build step)
+    - name: Generate static files
+      run: php build-script.php  # Replace with the script or commands to generate static HTML files
+
+    # Step 5: Deploy the static website to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.MY_TOKEN }}
-        publish_dir: ./SIA  # Specify the root directory or folder where your HTML files are
+        publish_dir: ./output  # Specify the directory where your static files are located after the build
