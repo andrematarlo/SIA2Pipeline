@@ -6,14 +6,26 @@
     <title>User Dashboard</title>
 </head>
 <body>
-    <h2>User Dashboard</h2>
-    <nav>
+    <h2>Welcome to Your Dashboard</h2>
+
+    <!-- Example user information display -->
+    <div>
+        <h3>User Info</h3>
+        <p><strong>Username:</strong> <span id="username">John Doe</span></p>
+        <p><strong>Email/Phone:</strong> <span id="email">johndoe@example.com</span></p>
+        <p><strong>Points:</strong> <span id="points">100</span></p>
+    </div>
+
+    <!-- Links to other sections of the app -->
+    <div>
+        <h3>Actions</h3>
         <ul>
-            <li><a href="view_points.html">View Points</a></li>
-            <li><a href="redeem_rewards.html">Redeem Rewards</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="profile.html">Edit Profile</a></li>
+            <li><a href="rewards.html">View Rewards</a></li>
+            <li><a href="logout.html">Logout</a></li>
         </ul>
-    </nav>
-    <p>Welcome, User! Use the links to view your points or redeem rewards.</p>
+    </div>
+
+    <script type="module" src="userdashboard.js"></script>
 </body>
 </html>
