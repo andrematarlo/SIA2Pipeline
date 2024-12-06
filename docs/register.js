@@ -5,13 +5,13 @@ import { getAuth, createUserWithEmailAndPassword, signInWithPhoneNumber, Recaptc
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDawz_TAF3dK9wV7j_5aBFhocJKIqc3kbk",
-  authDomain: "sia2finals.firebaseapp.com",
-  projectId: "sia2finals",
-  storageBucket: "sia2finals.firebasestorage.app",
-  messagingSenderId: "621082868987",
-  appId: "1:621082868987:web:7eb5cbb1f5f25fbbd0445e",
-  measurementId: "G-NLWNRVY1BQ"
+  apiKey: "AIzaSyCwZaQOLvxAtM_aoO1AqsEOlbRGMBh1JNY",
+  authDomain: "sia2pipelineactivity.firebaseapp.com",
+  projectId: "sia2pipelineactivity",
+  storageBucket: "sia2pipelineactivity.firebasestorage.app",
+  messagingSenderId: "732439095208",
+  appId: "1:732439095208:web:0d3062c7311471ccba9f9d",
+  measurementId: "G-85VMJFVQJQ"
 };
 
 // Initialize Firebase
