@@ -5,101 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            background-color:white;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-image: url("register.gif");
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image in the viewport */
+            color: #333;
         }
+
+        .container {
+            background: bisque;
+            width: 350px;
+            padding: 20px 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
         h2 {
-            color: white;
-            font-size: 28px;
+            text-align: center;
             margin-bottom: 20px;
-            text-align: center;
+            color: brown;
         }
+
         form {
-            background-color:black;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
+            display: flex;
+            flex-direction: column;
         }
+
         label {
-            display: block;
             font-size: 14px;
-            color: white;
             margin-bottom: 5px;
-        }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid white;
-            border-radius: 5px;
-            font-size: 16px;
-            background-color: transparent;
-        }
-        input:focus {
-            outline: none;
-            border-color: transparent;
-            background-color: transparent;
-            color: white;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: mediumspringgreen;
-            color: black;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: mediumseagreen;
-        }
-        p {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-            color: white;
-        }
-    
-        a {
-            color: white;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            color: brown;
         }
         input::placeholder {
-            color: whitesmoke; /* Change this to your desired color */
-            font-style: italic; /* Optional: if you want the placeholder text to be italic */
+    color: peachpuff; /* Brown color */
+    font-style: italic; /* Optional: Adds an italic style for better distinction */
+    opacity: 1; /* Ensures the placeholder is fully visible (default is 0.5) */
+}
+
+
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            outline: none;
+            color: brown;
         }
-        
+
+        input:focus {
+            border-color: beige;
+        }
+
+        button {
+            padding: 10px;
+            background: burlywood;
+            color: brown;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: cornsilk;
+        }
+
+        p {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: brown;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <form id="registerForm">
+    <div class="container">
         <h2>Register</h2>
-        <label for="emailPhone">Email or Phone:</label>
-        <input type="text" id="emailPhone" name="emailPhone" required placeholder="Enter Email or Phone">
+        <form id="registerForm">
+            <label for="emailPhone">Email or Phone:</label>
+            <input type="text" id="emailPhone" name="emailPhone" required placeholder="Enter Email or Phone">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder="Enter Password">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter Password">
 
-        <button type="submit">Register</button>
+            <button type="submit">Register</button>
+        </form>
+
         <p>Already have an account? <a href="login.html">Login here</a></p>
-    </form>
-
-    
+    </div>
 
     <script type="module" src="register.js"></script>
 </body>

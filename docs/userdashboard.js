@@ -10,19 +10,17 @@ const firebaseConfig = {
   storageBucket: "sia2finals.firebasestorage.app",
   messagingSenderId: "621082868987",
   appId: "1:621082868987:web:7eb5cbb1f5f25fbbd0445e",
-  measurementId: "G-NLWNRVY1BQ"
+  measurementId: "G-NLWNRVY1BQ",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Function to load user information
-function loadUserInfo(user) {
-  document.getElementById('username').textContent = user.displayName || "User Name";  // Display name
-  document.getElementById('email').textContent = user.email || "Email not available"; // Email/Phone
-  // You can add a field for points if you fetch them from your database
-  document.getElementById('points').textContent = "100";  // Static example, can be dynamic
+// Function to load user email into the dashboard
+function loadUserEmail(user) {
+  const emailElement = document.getElementById('email');
+  emailElement.textContent = user.email || "Email not available"; // Display user email or a fallback message
 }
 
 // Check if the user is logged in
@@ -31,7 +29,7 @@ onAuthStateChanged(auth, (user) => {
     // Redirect to login page if not logged in
     window.location.href = 'login.html';
   } else {
-    // Load user info if logged in
-    loadUserInfo(user);
+    // Load user email if logged in
+    loadUserEmail(user);
   }
 });
