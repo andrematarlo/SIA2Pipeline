@@ -4,20 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:white;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            background-color:black;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: transparent;
+        }
+        input:focus {
+            outline: none;
+            border-color: transparent;
+            background-color: transparent;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: mediumspringgreen;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: mediumseagreen;
+        }
+        p {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: white;
+        }
+    
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input::placeholder {
+            color: whitesmoke; /* Change this to your desired color */
+            font-style: italic; /* Optional: if you want the placeholder text to be italic */
+        }
+        
+    </style>
 </head>
 <body>
-    <h2>Register</h2>
     <form id="registerForm">
+        <h2>Register</h2>
         <label for="emailPhone">Email or Phone:</label>
-        <input type="text" id="emailPhone" name="emailPhone" required placeholder="Enter Email or Phone"><br><br>
+        <input type="text" id="emailPhone" name="emailPhone" required placeholder="Enter Email or Phone">
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder="Enter Password"><br><br>
+        <input type="password" id="password" name="password" required placeholder="Enter Password">
 
         <button type="submit">Register</button>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
     </form>
 
-    <p>Already have an account? <a href="login.html">Login here</a></p>
+    
 
     <script type="module" src="register.js"></script>
 </body>
